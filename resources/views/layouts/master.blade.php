@@ -11,12 +11,12 @@
 
 
     <header class="header">
-        <a href="index.html" class="logo">Logo</a>
+        <a href="{{url('/')}}" class="logo">Logo</a>
 
         <nav class="navbar_top">
             <a href="#">Home</a>
             <a href="#">Contact</a>
-            <a href="login.html">Login/Logout</a>
+            <a href="{{url('/login')}}">Login/Logout</a>
         </nav>
     </header>
     <div class="Dashboard">

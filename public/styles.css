@@ -56,7 +56,7 @@ body {
 
 
     .logo {
-        margin-left:0;
+        margin-left:1%;
         font-size: 32px;
         color: white;
         text-decoration: none;
@@ -139,9 +139,9 @@ body {
         text-align: center;
     }
 
-    .ipt_toggle {
-        display: none;
-        visibility: hidden;
+    .i_toggle {
+        position: absolute;
+        left: -9999px;
     }
 
     .toggle {
@@ -171,15 +171,15 @@ body {
         transition: 0.3s ease;
     }
 
-    .ipt_toggle:checked ~ .slide{
+    .i_toggle:checked ~ .slide{
         transform: translateX(0);
     }
 
-    .ipt_toggle:checked ~ .toggle{
+    .i_toggle:checked ~ .toggle{
        background-color: white;
     }
 
-    .ipt_toggle:checked ~ .toggle .line{
+    .i_toggle:checked ~ .toggle .line{
         background-color: black;
      }
 
