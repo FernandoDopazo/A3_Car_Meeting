@@ -10,4 +10,14 @@ class homepageController extends Controller
     {
         return view('index');
     }
+
+    public function store()
+    {
+        
+    }
+
+    public function destroy()
+    {
+
+    }
 }

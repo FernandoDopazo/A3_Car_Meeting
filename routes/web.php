@@ -10,3 +10,4 @@ use App\Http\Controllers\loginController;
 
 Route::resource('/', homepageController::class);
 Route::resource('/login', loginController::class);
+
