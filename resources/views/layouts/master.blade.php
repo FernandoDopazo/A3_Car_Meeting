@@ -11,11 +11,9 @@
 
 
     <header class="header">
-        <a href="{{url('/')}}" class="logo">Logo</a>
+        <a href="{{url('/')}}" class="logo">Autos</a>
 
         <nav class="navbar_top">
-            <a href="#">Home</a>
-            <a href="#">Contact</a>
             <a href="{{url('/login')}}">Login/Logout</a>
         </nav>
     </header>
@@ -28,7 +26,7 @@
                 <span class="line"></span>
             </div>
             <div class="slide">
-                <h1 class="menu_dash">MENU</h1>
+                <h1 class="menu_dash"></h1>
                 <ul>
                     <li><a href="#"><i class="fas fa-tv"></i>Dashboard</a></li>
                     <li><a href="#"><i class="fas fa-book"></i>Meetings</a></li>
