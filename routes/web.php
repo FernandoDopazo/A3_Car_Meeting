@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
 
 Route::get('/', [CarController::class, 'index']);
-Route::get('/dashboard', [CarController::class, 'dashboard'])->middleware(['auth', 'verified']);
+Route::get('/dashboard', [CarController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 
 
