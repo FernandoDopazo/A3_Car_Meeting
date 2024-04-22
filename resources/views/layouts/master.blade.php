@@ -14,9 +14,20 @@
         <a href="{{url('/')}}" class="logo">Logo</a>
 
         <nav class="navbar_top">
-            <a href="#">Home</a>
+            <a href="/">Home</a>
             <a href="#">Contact</a>
-            <a href="{{url('/login')}}">Login/Logout</a>
+            @auth
+            <a href="#">Anunciar</a>
+            <a href="/dashboard">Profile</a>
+            <form method="POST" action="/logout">
+                @csrf
+                <a href="/logout" onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
+            </form>
+            @endauth
+            @guest
+            <a href="/login">Login</a>
+            <a href="/register">Cadastre-se</a>
+            @endguest
         </nav>
     </header>
     <div class="Dashboard">
@@ -30,10 +41,9 @@
             <div class="slide">
                 <h1 class="menu_dash">MENU</h1>
                 <ul>
-                    <li><a href="#"><i class="fas fa-tv"></i>Dashboard</a></li>
                     <li><a href="#"><i class="fas fa-book"></i>Meetings</a></li>
-                    <li><a href="#"><i class="fas fa-cogs"></i>Customizations</a></li>
-                    <li><a href="#"><i class="fas fa-heart"></i>Comunity</a></li>
+                    <li><a href="#"><i class="fas fa-cogs"></i>Marketplace</a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i>Customizations</a></li>
                     <li><a href="#"><i class="fas fa-user"></i>About us</a></li>
                 </ul>
             </div>
