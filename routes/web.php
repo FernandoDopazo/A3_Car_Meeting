@@ -6,7 +6,8 @@ use App\Http\Controllers\CarController;
 
 Route::get('/', [CarController::class, 'index']);
 Route::get('/dashboard', [CarController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
-
+Route::get('/events/create', [CarController::class, 'events'])->middleware('auth');
+Route::post('/events', [CarController::class, 'store']);
 
 
 Route::middleware('auth')->group(function () {

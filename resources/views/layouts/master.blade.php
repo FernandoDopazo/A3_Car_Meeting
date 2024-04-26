@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <title>@yield('title')</title>
 </head>
 <body>
@@ -17,7 +17,7 @@
             <a href="/">Home</a>
             <a href="#">Contact</a>
             @auth
-            <a href="#">Anunciar</a>
+            <a href="/events/create">Anunciar</a>
             <a href="/dashboard">Profile</a>
             <form method="POST" action="/logout">
                 @csrf
