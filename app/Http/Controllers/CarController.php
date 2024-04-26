@@ -11,7 +11,7 @@ class CarController extends Controller
 
         $events = Event::all();
 
-        return view('index');
+        return view('index', ['events' => $events]);
     }
 
     public function dashboard(){

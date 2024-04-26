@@ -55,7 +55,7 @@
     </div>
 
     <footer>
-        <p> Copyright &copy;2024 Design by <span class="design">Fernando Dopazo & Lucas Bohler</span></p>
+        <p> Copyright &copy;2024 Design by <span class="design">Fernando Dopazo & Lucas Bohrer</span></p>
     </footer>
 </body>
 </html>
