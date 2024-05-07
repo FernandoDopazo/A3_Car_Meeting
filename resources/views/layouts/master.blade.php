@@ -41,7 +41,7 @@
             <div class="slide">
                 <h1 class="menu_dash">MENU</h1>
                 <ul>
-                    <li><a href="#"><i class="fas fa-book"></i>Meetings</a></li>
+                    <li><a href="/events/allEvents"><i class="fas fa-book"></i>Meetings</a></li>
                     <li><a href="#"><i class="fas fa-cogs"></i>Marketplace</a></li>
                     <li><a href="#"><i class="fas fa-heart"></i>Customizations</a></li>
                     <li><a href="#"><i class="fas fa-user"></i>About us</a></li>

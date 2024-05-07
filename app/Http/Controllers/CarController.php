@@ -9,9 +9,7 @@ class CarController extends Controller
 {
     public function index(){
 
-        $events = Event::all();
-
-        return view('index', ['events' => $events]);
+        return view('index');
     }
 
     public function dashboard(){
@@ -51,5 +49,22 @@ class CarController extends Controller
 
         $event->save();
         return redirect('/')->with('msg', 'Evento criado com sucesso!');
+    }
+
+    public function allEvents(){
+
+        $search = request('search');
+
+        if($search){
+
+            $events = Event::where([
+                ['title', 'like', '%'.$search.'%']
+            ])->get();
+        
+        }else{
+            $events = Event::all();
+        }
+
+        return view('events.allEvents', ['events' => $events, 'search' => $search]);
     }
 }

@@ -8,6 +8,7 @@ Route::get('/', [CarController::class, 'index']);
 Route::get('/dashboard', [CarController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/events/create', [CarController::class, 'events'])->middleware('auth');
 Route::post('/events', [CarController::class, 'store']);
+Route::get('/events/allEvents', [CarController::class, 'allEvents']);
 
 
 Route::middleware('auth')->group(function () {
