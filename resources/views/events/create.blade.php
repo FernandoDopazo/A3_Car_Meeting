@@ -45,19 +45,16 @@
             <div class="form-group">
                 <label for="title">Adicione :</label>
                 <div class="form-group">	
-                    <input type="checkbox" name="items[]" value="Cadeiras"> Cadeiras
+                    <input type="checkbox" name="items[]" value="Vaga Coberta"> Vaga Coberta
                  </div>
                 <div class="form-group">	
-                    <input type="checkbox" name="items[]" value="Palco"> Palco
+                    <input type="checkbox" name="items[]" value="Música"> Música
                  </div>
                 <div class="form-group">	
-                    <input type="checkbox" name="items[]" value="Cerveja grátis"> Cerveja grátis
+                    <input type="checkbox" name="items[]" value="Banheiro"> Banheiro
                 </div>
                 <div class="form-group">	
-                    <input type="checkbox" name="items[]" value="Open Food"> Open food
-                </div>
-                <div class="form-group">	
-                    <input type="checkbox" name="items[]" value="Brindes"> Brindes
+                    <input type="checkbox" name="items[]" value="Loja de Conveniência"> Loja de Conveniência
                 </div>
             </div>
             

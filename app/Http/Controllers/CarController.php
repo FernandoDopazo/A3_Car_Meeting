@@ -65,6 +65,22 @@ class CarController extends Controller
             $events = Event::all();
         }
 
+        if($search){
+
+            $events = Event::where([
+                ['city', 'like', '%'.$search.'%']
+            ])->get();
+        
+        }else{
+            $events = Event::all();
+        }
+
         return view('events.allEvents', ['events' => $events, 'search' => $search]);
+    }
+
+    public function show($id){
+        $events = Event::findOrFail($id);
+
+        return view('events.print', ['events' => $events]);
     }
 }

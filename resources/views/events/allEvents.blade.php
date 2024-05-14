@@ -11,26 +11,26 @@
     </div>
 
     @if($search)
-    <h2>Buscando por: {{ $search }}</h2>
+        <h2>Buscando por: {{ $search }}</h2>
     
     @else
-    <h2>Próximos Encontros</h2>
-    <p>Veja os próximos encontros</p>
+        <h2>Próximos Encontros</h2>
+        <p>Veja os próximos encontros</p>
     @endif
     
-@foreach($events as $event)
+    @foreach($events as $event)
 
-    <div>
-        <img src="/img/events/{{ $event->image }}" alt="{{ $event->title }}">
-        
         <div>
-            <p>{{ date('d/m/Y', strtotime($event->date)) }}</p>
-            <h5> {{ $event->title }} </h5>
-            <p>Participantes</p>
-            <a href="/events/{{ $event->id }}">Saber mais</a>
+            <img src="/img/events/{{ $event->image }}" alt="{{ $event->title }}">
+            
+            <div>
+                <p>{{ date('d/m/Y', strtotime($event->date)) }}</p>
+                <h5> {{ $event->title }} </h5>
+                <p>Participantes</p>
+                <a href="/events/{{ $event->id }}">Saber mais</a>
+            </div>
         </div>
-    </div>
-@endforeach
+    @endforeach
 
     @if(count($events) == 0 && $search)
         <p>Ainda não foram criados encontros com: {{ $search }}! <a href="/events/allEvents">Ver todos Encontros</a></p>
