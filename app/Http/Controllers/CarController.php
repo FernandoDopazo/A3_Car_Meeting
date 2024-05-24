@@ -58,16 +58,6 @@ class CarController extends Controller
         if($search){
 
             $events = Event::where([
-                ['title', 'like', '%'.$search.'%']
-            ])->get();
-        
-        }else{
-            $events = Event::all();
-        }
-
-        if($search){
-
-            $events = Event::where([
                 ['city', 'like', '%'.$search.'%']
             ])->get();
         
