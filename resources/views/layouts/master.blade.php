@@ -4,18 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <link rel="stylesheet" href="styles.css">
     <script src="resources/js/carrossel.js" defer></script>
+
+    <link rel="stylesheet" href="/css/styles.css">
+
     <title>@yield('title')</title>
 </head>
 <body>
-
-
     <header class="header">
         <a href="{{url('/')}}" class="logo">Autos</a>
 
         <nav class="navbar_top">
-            <a href="{{url('/login')}}">Login/Logout</a>
+            <a href="/">Home</a>
+            <a href="#">Contact</a>
+            @auth
+            <a href="/events/create">Anunciar</a>
+            <a href="/dashboard">Profile</a>
+            <form method="POST" action="/logout">
+                @csrf
+                <a href="/logout" onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
+            </form>
+            @endauth
+            @guest
+            <a href="/login">Login</a>
+            <a href="/register">Cadastre-se</a>
+            @endguest
         </nav>
     </header>
     <div class="Dashboard">
@@ -29,10 +44,9 @@
             <div class="slide">
                 <h1 class="menu_dash"></h1>
                 <ul>
-                    <li><a href="#"><i class="fas fa-tv"></i>Dashboard</a></li>
-                    <li><a href="#"><i class="fas fa-book"></i>Meetings</a></li>
-                    <li><a href="#"><i class="fas fa-cogs"></i>Customizations</a></li>
-                    <li><a href="#"><i class="fas fa-heart"></i>Comunity</a></li>
+                    <li><a href="/events/allEvents"><i class="fas fa-book"></i>Meetings</a></li>
+                    <li><a href="#"><i class="fas fa-cogs"></i>Marketplace</a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i>Customizations</a></li>
                     <li><a href="#"><i class="fas fa-user"></i>About us</a></li>
                 </ul>
             </div>
@@ -43,9 +57,8 @@
         @yield('content')
 
     </div>
-
     <footer>
-        <p> Copyright &copy;2024 Design by <span class="design">Fernando Dopazo & Lucas Bohler</span></p>
+        <p> Copyright &copy;2024 Design by <span class="design">Fernando Dopazo & Lucas Bohrer</span></p>
     </footer>
 </body>
 </html>

@@ -10,7 +10,7 @@
 }
 
 body {
-    min-height: 100vw;
+   
     background-color: whitesmoke;
 
 }
@@ -185,7 +185,7 @@ body {
      }
 
     footer {
-        margin-top: 100%;
+        margin-bottom: 0;
         width: 100%;
         background-color: black;
         padding: 20px;
@@ -254,8 +254,3 @@ body {
         padding: 40px;
         text-align: center;
     }
-
-
-
-
-

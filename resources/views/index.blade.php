@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Home')
+@section('title', 'Autos Encontros')
 
 @section('content')
 
@@ -14,5 +14,6 @@
             </div>
         </div>
     </div>
+</div>
 
 @endsection
