@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="styles.css">
-    <script src="resources/js/carrossel.js" defer></script>
+    <script src="{{ asset('resources/js/carrossel.js') }}" defer></script>
 
     <link rel="stylesheet" href="/css/styles.css">
 
