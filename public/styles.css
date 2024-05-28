@@ -43,7 +43,7 @@ body {
         display: flex;
         flex-direction: column;
         margin-top: 100px;
-        margin-left: 200px;
+        margin-left: 100px;
         margin-right: 50px;
         padding: 20px;
         height: 100vh;
@@ -127,7 +127,7 @@ body {
         text-transform: capitalize;
         text-decoration: none;
         transition: 0.2 ease-out;
-        margin-left: 5%;
+        margin-left: 5;
     }
 
     ul li a:hover {
@@ -186,9 +186,12 @@ body {
 
     footer {
         margin-top: 100%;
+        width: 100%;
         background-color: black;
         padding: 20px;
         text-align: center;
+        z-index: 100;
+        background-size:cover;
     }
 
     footer p {
@@ -224,8 +227,8 @@ body {
 
     img {
         object-fit: cover;
-        height: 500px;
-        width: 1200px;
+        height: 100%;
+        width: 100%;
     }
 
     .square_photo {

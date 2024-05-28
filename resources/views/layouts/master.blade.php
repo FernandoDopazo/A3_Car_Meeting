@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
+    <script src="resources/js/carrossel.js" defer></script>
     <title>@yield('title')</title>
 </head>
 <body>
@@ -40,6 +41,7 @@
 
     <div class="contents">
         @yield('content')
+
     </div>
 
     <footer>
