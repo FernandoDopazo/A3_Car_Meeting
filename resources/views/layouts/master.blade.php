@@ -21,7 +21,9 @@
             <a href="#">Contact</a>
             @auth
             <a href="/events/create">Anunciar</a>
-            <a href="/dashboard">Profile</a>
+            @foreach($perfil as $perfis)
+            <a href="/">{{ $perfis->name }}</a>
+            @endforeach
             <form method="POST" action="/logout">
                 @csrf
                 <a href="/logout" onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
@@ -57,6 +59,7 @@
         @yield('content')
 
     </div>
+    <br>
     <footer>
         <p> Copyright &copy;2024 Design by <span class="design">Fernando Dopazo & Lucas Bohrer</span></p>
     </footer>

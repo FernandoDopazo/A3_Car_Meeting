@@ -4,12 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\User;
 
 class CarController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
 
-        return view('index');
+        $perfis = User::all();
+        //dd($perfis);
+        $perfil = User::getProfileById($perfis->id);
+
+        return view('index', compact('perfil'));
     }
 
     public function dashboard(){
@@ -22,6 +27,7 @@ class CarController extends Controller
         return view('events.create');
     }
 
+    
     public function store(Request $request){
         
         $event = new Event;
