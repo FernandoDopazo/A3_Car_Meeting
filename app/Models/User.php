@@ -50,7 +50,7 @@ class User extends Authenticatable
         return User::where('id','=', $id)->get();
      }
 
-     public static function perfil()
+     /*public static function perfil()
      {
         $result = User::
         select('User.id as id, user.name as name')
@@ -58,5 +58,5 @@ class User extends Authenticatable
 
         return $result;
 
-     }
+     }*/
 }

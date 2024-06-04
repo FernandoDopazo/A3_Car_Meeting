@@ -18,7 +18,6 @@
 
         <nav class="navbar_top">
             <a href="/">Home</a>
-            <a href="#">Contact</a>
             @auth
             <a href="/events/create">Anunciar</a>
 

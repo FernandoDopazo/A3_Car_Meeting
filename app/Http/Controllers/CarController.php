@@ -19,11 +19,11 @@ class CarController extends Controller
 
     public function dashboard(){
 
-        $perfil = User::perfil();
+        /*$perfil = User::perfil();
         dd($perfil);
-        $perfis = $perfil->name;
+        $perfis = $perfil->name;*/
 
-        return view('dashboard', ['perfis' => $perfis, 'perfil' => $perfil]);
+        return view('dashboard');
     }
 
     public function events(){

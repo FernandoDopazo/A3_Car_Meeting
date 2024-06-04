@@ -3,7 +3,10 @@
 @section('title', 'Autos Encontros')
 
 @section('content')
-
+<div>
+    <h2>Bem-vindo ao Maior Portal de Encontros de Carros!</h2>
+</div>
+<br>
 <div style="flex-direction: column;">
     <div class="square_photo">
         <div class="carrossel">
@@ -15,34 +18,28 @@
         </div>
     </div>
 </div>
-<section id="home">
-    <div class="hero">
-        <h2>Bem-vindo ao Maior Portal de Encontros de Carros!</h2>
-    </div>
-    <br>
-</section>
-
+<br><br>
 <div>
     <h1>Últimos eventos</h1>
 </div>
 <br><br><br>
 <div style="width: 100%;height:100%;display:flex;justify-content:space-between">
     
-    <div style="background-color: black;width:20%;height:200px;margin-left:5%">
+    <a href="/" style="background-color: black;width:20%;height:200px;margin-left:5%;border-radius:10%;text-decoration:none;color:transparent">
         <h2>teste</h2>
-    </div>
+    </a>
    
-    <div style="background-color: black;width:20%;">
+    <a href="/" style="background-color: black;width:20%;height:200px;margin-left:5%;border-radius:10%;text-decoration:none;color:transparent">
         <h2>teste</h2>
-    </div>
+    </a>
 
-    <div style="background-color: black;width:20%;">
+    <a href="/" style="background-color: black;width:20%;height:200px;margin-left:5%;border-radius:10%;text-decoration:none;color:transparent">
         <h2>teste</h2>
-    </div>
+    </a>
 
-    <div style="background-color: black;width:20%;">
+    <a href="/" style="background-color: black;width:20%;height:200px;margin-left:5%;border-radius:10%;text-decoration:none;color:transparent">
         <h2>teste</h2>
-    </div>
+    </a>
 </div>
 <div class="hero">
     <p>Descubra eventos incríveis, compartilhe sua paixão e conecte-se com outros entusiastas.</p>
