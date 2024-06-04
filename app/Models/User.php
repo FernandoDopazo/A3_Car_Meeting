@@ -49,4 +49,14 @@ class User extends Authenticatable
     public static function getProfileById($id){
         return User::where('id','=', $id)->get();
      }
+
+     public static function perfil()
+     {
+        $result = User::
+        select('User.id as id, user.name as name')
+        ->get();
+
+        return $result;
+
+     }
 }
