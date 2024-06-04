@@ -10,9 +10,10 @@
 }
 
 body {
-    min-height: 100vw;
-    background-color: whitesmoke;
-
+   display: flex;
+   flex-direction: column;
+    background-color:whitesmoke;
+    margin: 0;
 }
 
 .header {
@@ -41,13 +42,13 @@ body {
 
 .contents {
         display: flex;
+        flex: 1;
         flex-direction: column;
         margin-top: 100px;
-        margin-left: 200px;
+        margin-left: 100px;
         margin-right: 50px;
         padding: 20px;
-        height: 100vh;
-
+        height: 83vh;
         align-items: center;
         text-align: center;
     }
@@ -56,7 +57,7 @@ body {
 
 
     .logo {
-        margin-left:45%;
+        margin-left:48%;
         font-size: 32px;
         color: white;
         text-decoration: none;
@@ -127,7 +128,7 @@ body {
         text-transform: capitalize;
         text-decoration: none;
         transition: 0.2 ease-out;
-        margin-left: 5%;
+        margin-left: 5;
     }
 
     ul li a:hover {
@@ -185,10 +186,14 @@ body {
      }
 
     footer {
-        margin-top: 100%;
+        position:relative;
+        width: 100%;
         background-color: black;
         padding: 20px;
         text-align: center;
+        z-index: 100;
+        background-size:cover;
+        bottom: 0;
     }
 
     footer p {
@@ -224,12 +229,58 @@ body {
 
     img {
         object-fit: cover;
-        height: 500px;
-        width: 1200px;
+        height: 100%;
+        width: 100%;
     }
 
     .square_photo {
-        margin-left: 15px;
+        margin-left: 20px;
+    }
+
+    section {
+        padding:0px 20px;
+    }
+
+    section h2 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .hero {
+        background: url('img/hero.jpg') no-repeat center center/cover;
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+        padding: 10px;
+    }
+
+    .hero h2 {
+        color: black;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        color: black;
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+
+    .btn-even {
+        background: black;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .btn-even:hover {
+        transition: 1s;
+        background: blueviolet;
     }
 
     .login {
@@ -251,4 +302,3 @@ body {
         padding: 40px;
         text-align: center;
     }
-    

@@ -4,17 +4,26 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\User;
 
 class CarController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
+
+        //$perfis = User::findOrFail($id);
+        //dd($perfis);
+        //$perfil = User::getProfileById($perfis->id);
 
         return view('index');
     }
 
     public function dashboard(){
 
-        return view('dashboard');
+        $perfil = User::perfil();
+        dd($perfil);
+        $perfis = $perfil->name;
+
+        return view('dashboard', ['perfis' => $perfis, 'perfil' => $perfil]);
     }
 
     public function events(){
@@ -22,8 +31,9 @@ class CarController extends Controller
         return view('events.create');
     }
 
+
     public function store(Request $request){
-        
+
         $event = new Event;
 
         $event->title = $request->title;
@@ -35,7 +45,7 @@ class CarController extends Controller
 
         //Image upload
         if($request->hasFile('image') && $request->file('image')->isValid()){
-            
+
             $requestImage = $request->image;
 
             $extension = $requestImage->extension();
@@ -60,7 +70,7 @@ class CarController extends Controller
             $events = Event::where([
                 ['city', 'like', '%'.$search.'%']
             ])->get();
-        
+
         }else{
             $events = Event::all();
         }

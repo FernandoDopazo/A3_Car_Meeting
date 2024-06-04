@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="{{ asset('resources/js/carrossel.js') }}" defer></script>
+
     <link rel="stylesheet" href="/css/styles.css">
+
     <title>@yield('title')</title>
 </head>
 <body>
-
-
     <header class="header">
         <a href="{{url('/')}}" class="logo">Autos</a>
 
@@ -18,7 +21,11 @@
             <a href="#">Contact</a>
             @auth
             <a href="/events/create">Anunciar</a>
-            <a href="/dashboard">Profile</a>
+
+            <a href="/"></a>
+
+
+
             <form method="POST" action="/logout">
                 @csrf
                 <a href="/logout" onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
@@ -50,12 +57,14 @@
         </label>
     </div>
 
-    <div class="contents">
-        @yield('content')
-    </div>
+        <div class="contents">
+            @yield('content')
+        </div>
+    <br>
 
-    <footer>
-        <p> Copyright &copy;2024 Design by <span class="design">Fernando Dopazo & Lucas Bohrer</span></p>
-    </footer>
+        <footer>
+            <p> Copyright &copy;2024 Design by <span class="design">Fernando Dopazo & Lucas Bohrer</span></p>
+        </footer>
+
 </body>
 </html>

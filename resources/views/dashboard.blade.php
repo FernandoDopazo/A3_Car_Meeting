@@ -4,5 +4,6 @@
 
 @section('content')
 
+<h2>{{ $perfis->name }}</h2>
 
 @endsection

@@ -12,17 +12,17 @@
 
     @if($search)
         <h2>Buscando por: {{ $search }}</h2>
-    
+
     @else
         <h2>Próximos Encontros</h2>
         <p>Veja os próximos encontros</p>
     @endif
-    
+
     @foreach($events as $event)
 
         <div>
             <img src="/img/events/{{ $event->image }}" alt="{{ $event->title }}">
-            
+
             <div>
                 <p>{{ date('d/m/Y', strtotime($event->date)) }}</p>
                 <h5> {{ $event->title }} </h5>
