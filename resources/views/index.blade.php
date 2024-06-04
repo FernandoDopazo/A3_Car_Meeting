@@ -18,9 +18,35 @@
 <section id="home">
     <div class="hero">
         <h2>Bem-vindo ao Maior Portal de Encontros de Carros!</h2>
-        <p>Descubra eventos incríveis, compartilhe sua paixão e conecte-se com outros entusiastas.</p>
-        <a href="/events/allEvents" class="btn-even">Ver Próximos Eventos</a>
     </div>
+    <br>
 </section>
+
+<div>
+    <h1>Últimos eventos</h1>
+</div>
+<br><br><br>
+<div style="width: 100%;height:100%;display:flex;justify-content:space-between">
+    
+    <div style="background-color: black;width:20%;height:200px;margin-left:5%">
+        <h2>teste</h2>
+    </div>
+   
+    <div style="background-color: black;width:20%;">
+        <h2>teste</h2>
+    </div>
+
+    <div style="background-color: black;width:20%;">
+        <h2>teste</h2>
+    </div>
+
+    <div style="background-color: black;width:20%;">
+        <h2>teste</h2>
+    </div>
+</div>
+<div class="hero">
+    <p>Descubra eventos incríveis, compartilhe sua paixão e conecte-se com outros entusiastas.</p>
+        <a href="/events/allEvents" class="btn-even">Ver Próximos Eventos</a>
+</div>
 
 @endsection

@@ -12,9 +12,8 @@
 body {
    display: flex;
    flex-direction: column;
-    background-color: whitesmoke;
+    background-color:whitesmoke;
     margin: 0;
-
 }
 
 .header {
@@ -187,7 +186,7 @@ body {
      }
 
     footer {
-        position: absolute;
+        position:relative;
         width: 100%;
         background-color: black;
         padding: 20px;
@@ -249,14 +248,14 @@ body {
 
     .hero {
         background: url('img/hero.jpg') no-repeat center center/cover;
-        height: 400px;
+        height: 350px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
         color: #fff;
-        padding: 20px;
+        padding: 10px;
     }
 
     .hero h2 {
