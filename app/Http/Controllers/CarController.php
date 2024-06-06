@@ -9,12 +9,23 @@ use App\Models\User;
 class CarController extends Controller
 {
     public function index(Request $request){
+        
+        $event_image = Event::orderBy('created_at', 'desc')->take(4)->get();
+        //dd($event_image);
 
-        //$perfis = User::findOrFail($id);
-        //dd($perfis);
-        //$perfil = User::getProfileById($perfis->id);
+        return view('index', compact('event_image'));
+    }
 
-        return view('index');
+    public function showImage($id)
+    {
+        $event = Event::find($id);
+
+        if ($event && $event->image) {
+            return response($event->image)
+                ->header('Content-Type', 'image/jpeg'); // Ajuste o content type conforme o formato da sua imagem
+        } else {
+            return response('Image not found', 404);
+        }
     }
 
     public function dashboard(){
