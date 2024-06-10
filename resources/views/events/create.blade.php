@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <div>
+    <div id="create-event">
         <h1>Crie o seu evento</h1>
         <form action="/events" method="POST" enctype="multipart/form-data">
             @csrf

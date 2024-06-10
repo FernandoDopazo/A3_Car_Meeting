@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\User;
 
 class CarController extends Controller
 {
@@ -47,6 +48,9 @@ class CarController extends Controller
             $event->image = $imageName;
         }
 
+        $user = auth()->user();
+        $event->user_id = $user->id;
+
         $event->save();
         return redirect('/')->with('msg', 'Evento criado com sucesso!');
     }
@@ -57,20 +61,47 @@ class CarController extends Controller
 
         if($search){
 
-            $events = Event::where([
+            $event = Event::where([
                 ['city', 'like', '%'.$search.'%']
             ])->get();
         
         }else{
-            $events = Event::all();
+            $event = Event::all();
         }
 
-        return view('events.allEvents', ['events' => $events, 'search' => $search]);
+        return view('events.allEvents', ['events' => $event, 'search' => $search]);
     }
 
     public function show($id){
-        $events = Event::findOrFail($id);
+        $event = Event::findOrFail($id);
 
-        return view('events.print', ['events' => $events]);
+        $user = auth()->user();
+        $hasUserJoined = false;
+
+        if($user) {
+
+            $userEvents = $user->eventsParticipant->toArray();
+
+            foreach($userEvents as $userEvent) {
+                if($userEvent['id'] == $id) {
+                    $hasUserJoined = true;
+                }
+            }
+
+        }
+
+        $eventOwner = User::where('id', $event->user_id)->first()->toArray();
+
+        return view('events.print', ['events' => $event, 'eventOwner' => $eventOwner, 'hasUserJoined' => $hasUserJoined]);
+    }
+
+    public function joinMeet($id){
+        $user = auth()->user();
+
+        $user->eventsParticipant()->attach($id);
+
+        $event = Event::findOrFail($id);
+
+        return redirect('/dashboard')->with('msg', 'Sua presença está confirmada no evento');
     }
 }
