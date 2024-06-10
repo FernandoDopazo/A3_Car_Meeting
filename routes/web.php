@@ -19,6 +19,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/event/image/{id}', [CarController::class, 'showImage']);
+Route::get('/event/image/{id}', [CarController::class, 'showImage'])->name('event.image');
 
 require __DIR__.'/auth.php';

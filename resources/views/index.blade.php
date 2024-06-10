@@ -30,7 +30,7 @@
     <div class="event">
         <h2>{{ $events->title }}</h2>
         @if ($events->image)
-            <img src="/event/image/{{$events->id}}" alt="Event image">
+        <img src="{{ $events['image'] }}" alt="">
         @else
             <p>Imagem não disponível.</p>
         @endif
