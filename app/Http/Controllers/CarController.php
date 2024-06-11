@@ -8,12 +8,31 @@ use App\Models\User;
 
 class CarController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
+        
+        $event_image = Event::orderBy('created_at', 'desc')->take(4)->get();
+        //dd($event_image);
 
-        return view('index');
+        return view('index', compact('event_image'));
+    }
+
+    public function showImage($id)
+    {
+        $event = Event::find($id);
+
+        if ($event && $event->image) {
+            return response($event->image)
+                ->header('Content-Type', 'image/jpeg'); // Ajuste o content type conforme o formato da sua imagem
+        } else {
+            return response('Image not found', 404);
+        }
     }
 
     public function dashboard(){
+
+        /*$perfil = User::perfil();
+        dd($perfil);
+        $perfis = $perfil->name;*/
 
         return view('dashboard');
     }
@@ -23,8 +42,9 @@ class CarController extends Controller
         return view('events.create');
     }
 
+
     public function store(Request $request){
-        
+
         $event = new Event;
 
         $event->title = $request->title;
@@ -36,7 +56,7 @@ class CarController extends Controller
 
         //Image upload
         if($request->hasFile('image') && $request->file('image')->isValid()){
-            
+
             $requestImage = $request->image;
 
             $extension = $requestImage->extension();
@@ -64,7 +84,7 @@ class CarController extends Controller
             $event = Event::where([
                 ['city', 'like', '%'.$search.'%']
             ])->get();
-        
+
         }else{
             $event = Event::all();
         }

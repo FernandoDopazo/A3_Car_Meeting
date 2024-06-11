@@ -173,10 +173,14 @@ ul li a i {
     }
 
 footer {
-    margin-top: 100%;
+    position:relative;
+    width: 100%;
     background-color: black;
     padding: 20px;
     text-align: center;
+    z-index: 100;
+    background-size:cover;
+    bottom: 0;
 }
 
 footer p {
@@ -189,6 +193,14 @@ footer p {
     letter-spacing: 1px;
     font-weight: 400;
     margin: 0px 5px;
+}
+
+.logo {
+    margin-left:50%;
+    font-size: 32px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
 }
 
 /*Barra de pesquisa*/
@@ -355,26 +367,78 @@ footer p {
     width: 500px;
 }*/
 
-.square_photo {
-    margin-left: 15px;
-}
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
 
-.login {
-    background-color: white;
-    border-radius: 50px;
-    height: 500px;
-    width: 500px;
-    margin-left: 25px;
-    padding: 40px;
-    text-align: center;
-}
+    .square_photo {
+        margin-left: 20px;
+    }
 
-.logout {
-    background-color: white;
-    border-radius: 50px;
-    height: 500px;
-    width: 500px;
-    margin-left: 25px;
-    padding: 40px;
-    text-align: center;
-}
+    section {
+        padding:0px 20px;
+    }
+
+    section h2 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .hero {
+        background: url('img/hero.jpg') no-repeat center center/cover;
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+        padding: 10px;
+    }
+
+    .hero h2 {
+        color: black;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        color: black;
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+
+    .btn-even {
+        background: black;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .btn-even:hover {
+        transition: 1s;
+        background: blueviolet;
+    }
+
+    .login {
+        background-color: white;
+        border-radius: 50px;
+        height: 500px;
+        width: 500px;
+        margin-left: 25px;
+        padding: 40px;
+        text-align: center;
+    }
+
+    .logout {
+        background-color: white;
+        border-radius: 50px;
+        height: 500px;
+        width: 500px;
+        margin-left: 25px;
+        padding: 40px;
+        text-align: center;
+    }
