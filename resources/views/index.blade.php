@@ -3,8 +3,8 @@
 @section('title', 'Autos Encontros')
 
 @section('content')
-    <div>
-        <h2>Bem-vindo ao Maior Portal de Encontros de Carros!</h2>
+    <div id="ind-h1">
+        <h1>Bem-vindo ao Maior Portal de Encontros de Carros!</h1>
     </div>
 <br>
         <div style="flex-direction: column;">
@@ -19,8 +19,8 @@
             </div>
         </div>
 <br><br>
-    <div>
-        <h1>Últimos eventos</h1>
+    <div id="ind-h2">
+        <h2>Últimos eventos</h2>
     </div>
     <div id="events-container" class="col-md-12">
         <div id="cards-container" class="row">

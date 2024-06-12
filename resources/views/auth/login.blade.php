@@ -3,40 +3,46 @@
 @section('title', 'Autos Encontros')
 
 @section('content')
+
+    <style>
+
+    body,html {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+
+
+    .login {
+        display: flex;
+        flex: 1;     
+        flex-direction: column;
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+        border: 2px solid black;
+        border-radius: 10%;
+        box-shadow: 10px 10px 10px 5px
+    }
+
+    form{
+        display: flex;
+        flex: 1;     
+        flex-direction: column;
+        padding-top: 120px;
+        align-items: center;
+        text-align: center;
+        
+    }
+    </style>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
-
-        <style>
-            
-            * {
-                background-image: 
-                font-family: "poppins", sans-serif;
-            }
-
-            body,html {
-            height: 100%;
-            width: 100%;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            }
-
-            .login {
-                display: flex;
-                flex: 1;     
-                flex-direction: column;
-                padding: 20px;
-                align-items: center;
-                text-align: center;
-                border: 2px solid black;
-                border-radius: 10%;
-                box-shadow: 10px 10px 10px 5px
-            }
-        </style>
        
        <div class="login">
         <h1>Login</h1>
