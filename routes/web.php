@@ -11,6 +11,7 @@ Route::get('/events/create', [CarController::class, 'events'])->middleware('auth
 Route::post('/events', [CarController::class, 'store']);
 Route::get('/events/allEvents', [CarController::class, 'allEvents']);
 Route::get('/events/{id}', [CarController::class, 'show']);
+Route::post('/events/join/{id}', [CarController::class, 'joinMeet'])->middleware('auth');
 
 
 Route::middleware('auth')->group(function () {

@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="/css/styles.css">
 
     <title>@yield('title')</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
 </head>
 <body>
     <header class="header">
@@ -56,14 +63,19 @@
         </label>
     </div>
 
-        <div class="contents">
-            @yield('content')
+    <div class="container-fluid">
+            <div class="row">
+                @if(session('msg'))
+                    <p class="msg">{{ session('msg')}}</p>
+                @endif
+                @yield('content')
+            </div>
         </div>
-    <br>
 
-        <footer>
-            <p> Copyright &copy;2024 Design by <span class="design">Fernando Dopazo & Lucas Bohrer</span></p>
-        </footer>
+    <footer>
+        <p> Copyright &copy;2024 Design by <span class="design">Fernando Dopazo & Lucas Bohrer</span></p>
+    </footer>
 
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> 
 </body>
 </html>

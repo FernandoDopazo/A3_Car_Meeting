@@ -3,52 +3,41 @@
 @section('title', 'Autos Encontros')
 
 @section('content')
-<div>
-    <h2>Bem-vindo ao Maior Portal de Encontros de Carros!</h2>
-</div>
+    <div id="ind-h1">
+        <h1>Bem-vindo ao Maior Portal de Encontros de Carros!</h1>
+    </div>
 <br>
-<div style="flex-direction: column;">
-    <div class="square_photo">
-        <div class="carrossel">
-            <div class="conteiner" id="img">
-                <img src="images/r35.jpg" alt="">
-                <img src="images/first_car.jpg" alt="">
-                <img src="images/old_car.jpg" alt="">
+        <div style="flex-direction: column;">
+            <div class="square_photo">
+                <div class="carrossel">
+                    <div class="conteiner" id="img">
+                        <img src="images/r35.jpg" alt="">
+                        <img src="images/first_car.jpg" alt="">
+                        <img src="images/old_car.jpg" alt="">
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 <br><br>
-<div>
-    <h1>Últimos eventos</h1>
-</div>
-<br><br><br>
-
-<div id="eventContainer" style="width: 100%;height:100%;display:flex;justify-content:space-between;margin-left:8%">
-    
-    @foreach ($event_image as $events)
-    <div class="event">
-        <h2>{{ $events->title }}</h2>
-        @if ($events->image)
-        <img src="{{ $events['image'] }}" alt="">
-        @else
-            <p>Imagem não disponível.</p>
-        @endif
+    <div id="ind-h2">
+        <h2>Últimos eventos</h2>
     </div>
-    @endforeach     
+    <div id="events-container" class="col-md-12">
+        <div id="cards-container" class="row">
+            @foreach($event as $event)
+                    
+                <div class="card col-md-3">
+                    <img src="/img/events/{{ $event->image }}" alt="{{ $event->title }}">
+                    
+                    <div class="card-body">
+                        <p class="card-date">{{ date('d/m/Y', strtotime($event->date)) }}</p>
+                        <h5 class="card-tilte"> {{ $event->title }} </h5>
+                        <p class="card-participants">{{ count($event->users) }} Participantes</p>
+                        <a href="/events/{{ $event->id }}" class="btn btn-primary">Saber mais</a>
+                    </div>
+                </div>
+        @endforeach
    
-    {{--<a href="/" style="background-color: black;width:20%;height:200px;margin-left:5%;border-radius:10%;text-decoration:none;color:transparent">
-        <h2>teste</h2>
-    </a>
-
-    <a href="/" style="background-color: black;width:20%;height:200px;margin-left:5%;border-radius:10%;text-decoration:none;color:transparent">
-        <h2>teste</h2>
-    </a>
-
-    <a href="/" style="background-color: black;width:20%;height:200px;margin-left:5%;border-radius:10%;text-decoration:none;color:transparent">
-        <h2>teste</h2>
-    </a>--}}
-</div>
 
 <div class="hero">
     <p>Descubra eventos incríveis, compartilhe sua paixão e conecte-se com outros entusiastas.</p>
