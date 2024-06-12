@@ -8,12 +8,11 @@ use App\Models\User;
 
 class CarController extends Controller
 {
-    public function index(Request $request){
+    public function index(){
         
-        $event_image = Event::orderBy('created_at', 'desc')->take(4)->get();
-        //dd($event_image);
+        $event = Event::orderBy('created_at', 'desc')->take(5)->get();
 
-        return view('index', compact('event_image'));
+        return view('index', ['event' => $event]);
     }
 
     public function showImage($id)
@@ -30,11 +29,9 @@ class CarController extends Controller
 
     public function dashboard(){
 
-        /*$perfil = User::perfil();
-        dd($perfil);
-        $perfis = $perfil->name;*/
-
-        return view('dashboard');
+        $user = auth()->user();
+        
+        return view('dashboard', ['user' => $user]);
     }
 
     public function events(){
