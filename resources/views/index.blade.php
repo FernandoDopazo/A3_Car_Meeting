@@ -11,9 +11,9 @@
             <div class="square_photo">
                 <div class="carrossel">
                     <div class="conteiner" id="img">
-                        <img src="images/r35.jpg" alt="">
-                        <img src="images/first_car.jpg" alt="">
-                        <img src="images/old_car.jpg" alt="">
+                        <img src="img/r35.jpg" alt="">
+                        <img src="img/first_car.jpg" alt="">
+                        <img src="img/old_car.jpg" alt="">
                     </div>
                 </div>
             </div>
