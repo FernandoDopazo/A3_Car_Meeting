@@ -81,7 +81,7 @@
                     </a>
                 @endif
                     <br><br>
-                <x-primary-button style="border: 1px solid black;width:100px;cursor:pointer">
+                <x-primary-button class="btn btn-primary">
                     {{ __('Log in') }}
                 </x-primary-button>
             </div>
