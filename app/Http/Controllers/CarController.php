@@ -32,8 +32,11 @@ class CarController extends Controller
     public function dashboard(){
 
         $user = auth()->user();
+        $participatingEvents = $user->events;
+        //dd($participatingEvents);
+        $createdEvents = Event::where('user_id', $user->id)->get();
 
-        return view('dashboard', ['user' => $user]);
+        return view('dashboard', ['user' => $user],compact('participatingEvents', 'createdEvents'));
     }
 
     public function events(){
