@@ -4,6 +4,9 @@
 
 @section('content')
     <div id="ind-h1">
+        @if($user)
+        <h1>{{ $user->name }},</h1>
+        @endif
         <h1>Bem-vindo ao Maior Portal de Encontros de Carros!</h1>
     </div>
 <br>
@@ -25,10 +28,10 @@
     <div id="events-container" class="col-md-12">
         <div id="cards-container" class="row">
             @foreach($event as $event)
-                    
+
                 <div class="card col-md-3">
                     <img src="/img/events/{{ $event->image }}" alt="{{ $event->title }}">
-                    
+
                     <div class="card-body">
                         <p class="card-date">{{ date('d/m/Y', strtotime($event->date)) }}</p>
                         <h5 class="card-tilte"> {{ $event->title }} </h5>
@@ -37,7 +40,8 @@
                     </div>
                 </div>
         @endforeach
-   
+
+<br><br><br>
 
 <div class="hero">
     <p>Descubra eventos incríveis, compartilhe sua paixão e conecte-se com outros entusiastas.</p>

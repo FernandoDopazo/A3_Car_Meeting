@@ -37,7 +37,7 @@
             @endguest
         </nav>
     </header>
-    <div class="Dashboard">
+    {{--<div class="Dashboard">
         <label>
             <input class="ipt_toggle" type="checkbox">
             <div class="toggle">
@@ -55,7 +55,7 @@
                 </ul>
             </div>
         </label>
-    </div>
+    </div>--}}
 
     <div class="container-fluid">
             <div class="row">

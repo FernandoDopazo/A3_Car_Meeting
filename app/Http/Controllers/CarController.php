@@ -9,10 +9,12 @@ use App\Models\User;
 class CarController extends Controller
 {
     public function index(){
-        
+
+        $user = auth()->user();
+
         $event = Event::orderBy('created_at', 'desc')->take(5)->get();
 
-        return view('index', ['event' => $event]);
+        return view('index', ['event' => $event],['user' => $user]);
     }
 
     public function showImage($id)
@@ -30,7 +32,7 @@ class CarController extends Controller
     public function dashboard(){
 
         $user = auth()->user();
-        
+
         return view('dashboard', ['user' => $user]);
     }
 
