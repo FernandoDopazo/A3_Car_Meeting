@@ -48,12 +48,13 @@
             </thead>
 
             <tbody>
+                @foreach($createdEvents as $event)
                 <tr>
                     <td scropt="row">contador de envento</td>
-                    <td><a href="#"></a>titulo do encontro</td>
-                    <td>quantidade de participantes</td>
+                    <td><a href="#"></a>{{ $event->title }}</td>
+                    <td>{{ $event->users->count() }}</td>
                     <td>
-                        <a href="#" class="btn btn-info edit-btn"><ion-icon name="pencil"></ion-icon> Editar</a> 
+                        <a href="#" class="btn btn-info edit-btn"><ion-icon name="pencil"></ion-icon> Editar</a>
                         <form action="#" method="POST">
                             @csrf
                             @method('DELETE')
@@ -61,6 +62,7 @@
                         </form>
                     </td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
