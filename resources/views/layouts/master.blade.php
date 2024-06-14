@@ -7,8 +7,7 @@
 
     <link rel="stylesheet" href="styles.css">
     <script src="{{ asset('resources/js/carrossel.js') }}" defer></script>
-
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
 
     <title>@yield('title')</title>
 
@@ -21,17 +20,12 @@
 </head>
 <body>
     <header class="header">
-        <a href="{{url('/')}}" class="logo">Autos</a>
+        <a href="{{url('/')}}" class="logo">Autos Encontros</a>
 
         <nav class="navbar_top">
-            <a href="/">Home</a>
             @auth
-            <a href="/events/create">Anunciar</a>
-
-            <a href="/"></a>
-
-
-
+            <a href="/events/create">Publicar</a>
+            <a href="/dashboard">Meu perfil</a>
             <form method="POST" action="/logout">
                 @csrf
                 <a href="/logout" onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
@@ -43,7 +37,7 @@
             @endguest
         </nav>
     </header>
-    {{--<div class="Dashboard">
+    <div class="Dashboard">
         <label>
             <input class="ipt_toggle" type="checkbox">
             <div class="toggle">
@@ -61,7 +55,7 @@
                 </ul>
             </div>
         </label>
-    </div>--}}
+    </div>
 
     <div class="container-fluid">
             <div class="row">
