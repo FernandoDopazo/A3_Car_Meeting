@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\ImageController;
 
-Route::get('/', [CarController::class, 'index']);
+Route::get('/', [CarController::class, 'index'])->name('index');
 Route::get('/dashboard', [CarController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/events/create', [CarController::class, 'events'])->middleware('auth');
 Route::post('/events', [CarController::class, 'store']);

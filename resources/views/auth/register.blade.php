@@ -8,32 +8,42 @@
         @csrf
 
         <style>
-            
+
             * {
-                background-image: 
                 font-family: "poppins", sans-serif;
             }
 
             body,html {
-            height: 100%;
-            width: 100%;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            }
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
 
             .login {
-                display: flex;
-                flex: 1;     
-                flex-direction: column;
-                padding: 20px;
-                align-items: center;
-                text-align: center;
-                border: 2px solid black;
-                border-radius: 10%;
-                box-shadow: 10px 10px 10px 5px
-            }
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+        border: 2px solid black;
+        border-radius: 10%;
+        box-shadow: 10px 10px 10px 5px
+    }
+
+            form{
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        padding-top: 110px;
+        align-items: center;
+        text-align: center;
+
+    }
         </style>
 
         <!-- Name -->
@@ -78,7 +88,7 @@
             </div>
             <br>
             <div class="flex items-center justify-end mt-4">
-                
+
                 <x-primary-button style="border: 1px solid black;width:100px;cursor:pointer">
                     {{ __('Cadastrar') }}
                 </x-primary-button>
@@ -86,7 +96,7 @@
         <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
             {{ __('Ja tem uma conta?') }}
         </a>
-                
+
             </div>
         </div>
     </form>
