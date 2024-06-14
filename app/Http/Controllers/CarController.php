@@ -14,10 +14,10 @@ class CarController extends Controller
 
         $event = Event::orderBy('created_at', 'desc')->take(5)->get();
 
-        return view('index', ['event' => $event],['user' => $user]);
+        return view('index', ['event' => $event, 'user' => $user]);
     }
 
-    public function showImage($id)
+    /**public function showImage($id)
     {
         $event = Event::find($id);
 
@@ -27,7 +27,7 @@ class CarController extends Controller
         } else {
             return response('Image not found', 404);
         }
-    }
+    }*/
 
     public function dashboard(){
 
@@ -36,7 +36,11 @@ class CarController extends Controller
         //dd($participatingEvents);
         $createdEvents = Event::where('user_id', $user->id)->get();
 
-        return view('dashboard', ['user' => $user],compact('participatingEvents', 'createdEvents'));
+        $events = $user->events;
+
+        $eventsParticipant = $user->eventsParticipant;
+
+        return view('dashboard', ['user' => $user, 'events' => $events, 'eventsParticipant' => $eventsParticipant]);
     }
 
     public function events(){
@@ -117,6 +121,39 @@ class CarController extends Controller
         return view('events.print', ['events' => $event, 'eventOwner' => $eventOwner, 'hasUserJoined' => $hasUserJoined]);
     }
 
+    public function edit($id) {
+
+        $event = Event::findOrFail($id);
+
+        return view('events.edit', ['event' => $event]);
+
+    }
+
+    public function update(Request $request) {
+
+        $data = $request->all();
+
+        // Image Upload
+        if($request->hasFile('image') && $request->file('image')->isValid()) {
+
+            $requestImage = $request->image;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestImage->move(public_path('img/events'), $imageName);
+
+            $data['image'] = $imageName;
+
+        }
+
+        Event::findOrFail($request->id)->update($data);
+
+        return redirect('/dashboard')->with('msg', 'Evento editado com sucesso!');
+
+    }
+
     public function joinMeet($id){
         $user = auth()->user();
 
@@ -125,5 +162,17 @@ class CarController extends Controller
         $event = Event::findOrFail($id);
 
         return redirect('/dashboard')->with('msg', 'Sua presença está confirmada no evento');
+    }
+
+    public function leaveEvent($id) {
+
+        $user = auth()->user();
+
+        $user->eventsParticipant()->detach($id);
+
+        $event = Event::findOrFail($id);
+
+        return redirect('/dashboard')->with('msg', 'Você saiu com sucesso do evento: ' . $event->title);
+
     }
 }

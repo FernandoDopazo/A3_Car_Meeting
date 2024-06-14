@@ -11,7 +11,10 @@ Route::get('/events/create', [CarController::class, 'events'])->middleware('auth
 Route::post('/events', [CarController::class, 'store']);
 Route::get('/events/allEvents', [CarController::class, 'allEvents']);
 Route::get('/events/{id}', [CarController::class, 'show']);
+Route::get('/events/edit/{id}', [CarController::class, 'edit'])->middleware('auth');
+Route::put('/events/update/{id}', [CarController::class, 'update'])->middleware('auth');
 Route::post('/events/join/{id}', [CarController::class, 'joinMeet'])->middleware('auth');
+Route::delete('/events/leave/{id}', [CarController::class, 'leaveEvent'])->middleware('auth');
 
 
 Route::middleware('auth')->group(function () {

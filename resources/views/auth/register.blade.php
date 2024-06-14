@@ -89,7 +89,7 @@
             <br>
             <div class="flex items-center justify-end mt-4">
 
-                <x-primary-button style="border: 1px solid black;width:100px;cursor:pointer">
+                <x-primary-button class="btn btn-primary">
                     {{ __('Cadastrar') }}
                 </x-primary-button>
         <br><br>
